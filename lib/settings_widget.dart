@@ -10,7 +10,8 @@ class _SettingsState extends State<Settings>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: Center(child: new Text('Settings')),
+        centerTitle: true,
+        title: new Text('Settings'),
         elevation: 0,
       ),
     );

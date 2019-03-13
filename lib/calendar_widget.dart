@@ -11,9 +11,13 @@ class _CalendarState extends State<Calendar>{
     // TODO: implement build
     return Scaffold(
       appBar: new AppBar(
-        title: Center(child: new Text('Calendar')),
+        centerTitle: true,
+        title: new Text('Calendar'),
         elevation: 0,
       ),
+      floatingActionButton: new FloatingActionButton(
+          onPressed: null,
+      child: new Icon(Icons.add)),
     );
   }
 }

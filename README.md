@@ -1,3 +1,3 @@
 # dash
 
-Minimalistic task management application
+Minimalistic task management application (rebuild of simple tasks)

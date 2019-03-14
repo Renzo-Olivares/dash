@@ -11,16 +11,12 @@ class MyApp extends StatelessWidget {
         statusBarColor: Colors.white,
         statusBarBrightness: Brightness.dark,
         systemNavigationBarColor: Colors.white,
-        systemNavigationBarIconBrightness: Brightness.dark)
-    );
+        systemNavigationBarIconBrightness: Brightness.dark));
     _updateNavigationBarIconBrightness();
     return new MaterialApp(
-      title: 'Dash',
-      home: Homenav(),
-      theme: new ThemeData(
-        primaryColor: Colors.white
-      )
-      );
+        title: 'Dash',
+        home: Homenav(),
+        theme: new ThemeData(primaryColor: Colors.white));
   }
 
   void _updateNavigationBarIconBrightness() async {

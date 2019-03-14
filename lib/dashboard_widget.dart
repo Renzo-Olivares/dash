@@ -10,50 +10,50 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: new AppBar(
-          centerTitle: true,
-          actions: <Widget>[
-            new IconButton(icon: new Icon(Icons.grid_on), onPressed: null)
-          ],
-          title: new Text('Dashboard'),
-          elevation: 0,
+      appBar: new AppBar(
+        centerTitle: true,
+        actions: <Widget>[
+          new IconButton(icon: new Icon(Icons.grid_on), onPressed: null)
+        ],
+        title: new Text('Dashboard'),
+        elevation: 0,
+      ),
+      floatingActionButton: new FloatingActionButton(
+          onPressed: () {
+            _onFabPress(context);
+          },
+          child: new Icon(Icons.add)),
+      body: Scaffold(
+        appBar: new SearchWidget(
+          onPressed: () => print('implement search'),
+          icon: Icons.search,
+          title: 'Search',
+          preferredSize: Size.fromHeight(50.0),
         ),
-        floatingActionButton: new FloatingActionButton(
-            onPressed: () {
-              _onFabPress(context);
-            },
-            child: new Icon(Icons.add)),
-        body: Scaffold(
-            appBar: new SearchWidget(
-              onPressed: () => print('implement search'),
-              icon: Icons.search,
-              title: 'Search',
-              preferredSize: Size.fromHeight(50.0),
-            ),
-            body: DefaultTabController(
-              length: 3,
-              child: Scaffold(
-                appBar: PreferredSize(
-                      preferredSize: Size.fromHeight(kToolbarHeight),
-                      child: Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: new TabBar(
-                              unselectedLabelColor: Colors.black45,
-                              labelColor: Colors.white,
-                              indicator: CustomTabIndicator(),
-                              tabs: <Widget>[
-                                new Tab(text: "Past"),
-                                new Tab(text: "Today"),
-                                new Tab(text: "Future")
-                              ]),
-                        ),
-                      ),
-                    ),
-                  ),
+        body: DefaultTabController(
+          length: 3,
+          child: Scaffold(
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(kToolbarHeight),
+              child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: new TabBar(
+                      unselectedLabelColor: Colors.black45,
+                      labelColor: Colors.white,
+                      indicator: CustomTabIndicator(),
+                      tabs: <Widget>[
+                        new Tab(text: "Past"),
+                        new Tab(text: "Today"),
+                        new Tab(text: "Future")
+                      ]),
                 ),
               ),
-            );
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   void _onFabPress(context) {

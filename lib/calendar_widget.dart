@@ -22,7 +22,10 @@ class _CalendarState extends State<Calendar> {
           elevation: 0,
         ),
         floatingActionButton: new FloatingActionButton(
-            onPressed: null, child: new Icon(Icons.add)),
+            onPressed: (){
+              _onFabPress(context);
+            },
+            child: new Icon(Icons.add)),
         body: new DatePickerDialog(
           initialDate: selectedDate,
           firstDate: firstDate,
@@ -30,5 +33,24 @@ class _CalendarState extends State<Calendar> {
           selectableDayPredicate: selectableDayPredicate,
           initialDatePickerMode: initialDatePickerMode,
         ));
+  }
+
+  void _onFabPress(context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+              child: new Wrap(children: <Widget>[
+            new TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter Task Title')),
+            new TextField(
+                decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter Task Details',
+            )),
+          ]));
+        });
   }
 }

@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
         title: 'Dash',
         home: Homenav(),
-        theme: new ThemeData(primaryColor: Colors.white));
+        theme: new ThemeData(primaryColor: Colors.white,
+        accentColor: Colors.blueAccent));
   }
 
   void _updateNavigationBarIconBrightness() async {

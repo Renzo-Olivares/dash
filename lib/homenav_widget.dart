@@ -5,7 +5,7 @@ import 'dashboard_widget.dart';
 
 class Homenav extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _HomenavState();
+  _HomenavState createState() => _HomenavState();
 }
 
 class _HomenavState extends State<Homenav> {

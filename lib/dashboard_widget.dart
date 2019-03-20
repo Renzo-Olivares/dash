@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'search_widget.dart';
+import 'animatedlist_widget.dart';
 
 class Dashboard extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _DashboardState();
+  _DashboardState createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> {
+  AnimatedTaskList pastList = AnimatedTaskList(GlobalKey<AnimatedListState>(debugLabel: "key 1"));
+  AnimatedTaskList todayList = AnimatedTaskList(GlobalKey<AnimatedListState>(debugLabel: "key 2"));
+  AnimatedTaskList futureList = AnimatedTaskList(GlobalKey<AnimatedListState>(debugLabel: "key 3"));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,31 +38,39 @@ class _DashboardState extends State<Dashboard> {
         body: DefaultTabController(
           length: 3,
           child: Scaffold(
-            appBar: PreferredSize(
-              preferredSize: Size.fromHeight(kToolbarHeight),
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: new TabBar(
-                      unselectedLabelColor: Colors.black45,
-                      labelColor: Colors.white,
-                      indicator: CustomTabIndicator(),
-                      tabs: <Widget>[
-                        new Tab(text: "Past"),
-                        new Tab(text: "Today"),
-                        new Tab(text: "Future")
-                      ]),
+              appBar: PreferredSize(
+                preferredSize: Size.fromHeight(kToolbarHeight),
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: new TabBar(
+                        unselectedLabelColor: Colors.black45,
+                        labelColor: Colors.white,
+                        indicator: CustomTabIndicator(),
+                        tabs: <Widget>[
+                          new Tab(text: "Past"),
+                          new Tab(text: "Today"),
+                          new Tab(text: "Future")
+                        ]),
+                  ),
                 ),
               ),
-            ),
-          ),
+              body: new TabBarView(
+                children: <Widget>[
+                  pastList,
+                  todayList,
+                  futureList
+                ],
+              )),
         ),
       ),
     );
   }
 
   void _onFabPress(context) {
-    showModalBottomSheet(
+    pastList.addUser();
+  }
+  /*showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
           return Container(
@@ -73,7 +86,7 @@ class _DashboardState extends State<Dashboard> {
             )),
           ]));
         });
-  }
+  }*/
 }
 
 class CustomTabIndicator extends Decoration {

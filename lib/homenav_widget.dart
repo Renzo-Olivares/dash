@@ -21,12 +21,12 @@ class _HomenavState extends State<Homenav> {
           fixedColor: Colors.black,
           currentIndex: _currentIndex,
           items: [
-            new BottomNavigationBarItem(
-                icon: new Icon(Icons.dashboard), title: new Text('Dashboard')),
-            new BottomNavigationBarItem(
-                icon: new Icon(Icons.event), title: new Text('Calendar')),
-            new BottomNavigationBarItem(
-                icon: new Icon(Icons.settings), title: new Text('Settings'))
+            BottomNavigationBarItem(
+                icon: Icon(Icons.dashboard), title: Text('Dashboard')),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.event), title: Text('Calendar')),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), title: Text('Settings'))
           ]),
     );
   }

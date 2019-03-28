@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'homenav_widget.dart';
 import 'package:flutter/services.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
         systemNavigationBarColor: Colors.white,
         systemNavigationBarIconBrightness: Brightness.dark));
     _updateNavigationBarIconBrightness();
-    return new MaterialApp(
+    return MaterialApp(
         title: 'Dash',
         home: Homenav(),
-        theme: new ThemeData(primaryColor: Colors.white,
-        accentColor: Colors.blueAccent));
+        theme: ThemeData(
+            primaryColor: Colors.white, accentColor: Colors.blueAccent));
   }
 
   void _updateNavigationBarIconBrightness() async {

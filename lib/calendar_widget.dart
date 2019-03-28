@@ -8,7 +8,8 @@ class Calendar extends StatefulWidget {
 }
 
 class _CalendarState extends State<Calendar> {
-  final AnimatedTaskList calendarTasks = AnimatedTaskList(GlobalKey<AnimatedListState>(debugLabel: "key 4"));
+  final AnimatedTaskList calendarTasks =
+      AnimatedTaskList(GlobalKey<AnimatedListState>(debugLabel: "key 4"));
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -18,19 +19,19 @@ class _CalendarState extends State<Calendar> {
     final selectableDayPredicate = null;
     final initialDatePickerMode = DatePickerModeCustom.day;
     return Scaffold(
-        appBar: new AppBar(
+        appBar: AppBar(
           centerTitle: true,
-          title: new Text('Calendar'),
+          title: Text('Calendar'),
           elevation: 0,
         ),
-        floatingActionButton: new FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
             onPressed: () {
               _onFabPress(context);
             },
-            child: new Icon(Icons.add)),
+            child: Icon(Icons.add)),
         body: Column(
           children: <Widget>[
-            new DatePickerDialog(
+            DatePickerDialog(
               initialDate: selectedDate,
               firstDate: firstDate,
               lastDate: lastDate,
@@ -47,22 +48,5 @@ class _CalendarState extends State<Calendar> {
         ));
   }
 
-  void _onFabPress(context) {
-    showModalBottomSheet(
-        context: context,
-        builder: (BuildContext bc) {
-          return Container(
-              child: new Wrap(children: <Widget>[
-            new TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Enter Task Title')),
-            new TextField(
-                decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Enter Task Details',
-            )),
-          ]));
-        });
-  }
+  void _onFabPress(context) {}
 }

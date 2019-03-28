@@ -38,12 +38,10 @@ class _AnimatedTaskListState extends State<AnimatedTaskList> {
                   (BuildContext context, int index, Animation animation) {
                 return Dismissible(
                     key: ValueKey("placeholder"), //make key index of list
-                    onDismissed: (both){
-                      
-                    },
+                    onDismissed: (both) {},
                     background: Card(
                         child: Container(
-                          alignment: Alignment.centerLeft,
+                            alignment: Alignment.centerLeft,
                             padding: EdgeInsets.only(left: 20.0),
                             color: Colors.blueAccent,
                             child: Icon(

@@ -37,7 +37,7 @@ class SearchWidget extends StatelessWidget implements PreferredSizeWidget {
                         Colors.grey[200],
                         Colors.grey[100],
                       ]),
-                  borderRadius: new BorderRadius.all(Radius.circular(30))),
+                  borderRadius: BorderRadius.all(Radius.circular(30))),
               child: Row(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
